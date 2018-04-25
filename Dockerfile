@@ -11,7 +11,7 @@ ADD htmly.conf /etc/apache2/sites-available/
 
 RUN apt-get update && apt-get -y install apt-transport-https wget vim
 RUN wget https://github.com/danpros/htmly/archive/v2.7.4.tar.gz ; tar -zxf v2.7.4.tar.gz -C /tmp/
-RUN rm -rf /var/www/html; mv /tmp/htmly-2.7.4 /var/www/html ; chown www-data: /var/www/html
+RUN rm -rf /var/www/html; mv /tmp/htmly-2.7.4 /var/www/html ; chown -R www-data: /var/www/html
 RUN a2enmod rewrite
 RUN a2dissite 000-default
 RUN a2ensite htmly
